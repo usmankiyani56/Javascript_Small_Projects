@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title></title>
+</head>
+<body>
+	<div class="img-container">
+		<img src="left.png" alt="left arrow" class="btn btn-left" type="button">
+		<img src="right.png" alt="right arrow" class="btn btn-right" type="button">
+	</div>
+
+	<script>
+		// Wait for the DOM to load before executing JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+  // Get references to the necessary elements
+  const sliderContainer = document.querySelector('.img-container');
+  const leftBtn = document.querySelector('.btn-left');
+  const rightBtn = document.querySelector('.btn-right');
+
+  // Array containing the image file names
+  const images = ['img-1.jpg', 'img-2.jpg', 'img-3.jpg', 'img-4.jpg', 'img-5.jpg', 'img-6.jpg'];
+
+  let currentIndex = 0;
+
+  // Function to update the background image of the slider container
+  function updateSliderBackground() {
+    const imageUrl = `url("${images[currentIndex]}")`;
+    sliderContainer.style.backgroundImage = imageUrl;
+  }
+
+  // Event listener for the left button
+  leftBtn.addEventListener('click', function() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateSliderBackground();
+  });
+
+  // Event listener for the right button
+  rightBtn.addEventListener('click', function() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateSliderBackground();
+  });
+
+  // Initial background image setup
+  updateSliderBackground();
+});
+
+
+
+
+
+		
+	</script>
+</body>
+</html>

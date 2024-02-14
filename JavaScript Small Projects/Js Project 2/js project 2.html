@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Js Project 2</title>
+</head>
+<body>
+	<div class="container">
+		<h4>A Message You Would Like To Pass</h4>
+
+		<form id="message-form">
+			<input type="text" name="" id="message" class="box" autocomplete="off">
+			<input type="submit" name="" id="submitBtn" class="button">
+
+		</form>
+		<h5 class="feedback">Please entetr a value to pass</h5>
+		<h4 class="">Last Message Delivered! </h4>
+		<h4 class="message-content">Hello World</h4>
+	</div>
+	<script>
+		(function() {
+    const form = document.querySelector("#message-form");
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const message = document.querySelector('#message');
+        const feedback = document.querySelector('.feedback');
+        const messageContent = document.querySelector('.message-content');
+
+        if (message.value === '') {
+            feedback.classList.add('show');
+            setTimeout(function() {
+                feedback.classList.remove('show');
+            }, 4000);
+        } else {
+            if (messageContent) {
+                // Check if messageContent exists before using it
+                messageContent.textContent = message.value;
+            }
+            message.value = '';
+        }
+    });
+})();
+
+	</script>
+
+</body>
+</html>

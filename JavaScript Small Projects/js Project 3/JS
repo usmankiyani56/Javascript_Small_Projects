@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Project 3</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+
+		}
+		body, html{
+			display: grid;
+			min-height: 100%;
+			place-items: center;
+			background-color: #EFF4FS;
+		}
+		.card {
+			width: 600px;
+			height: 350px;
+			box-shadow: 10px 10px 15px rgb(192,183, 183), 10px 10px 15px rgb(192, 183, 183),
+		}
+
+	</style>
+</head>
+<body>
+	<div class="card">
+		<h2 class="name">JavaScript Project</h2>
+		<h4 id="counter">0</h4>
+		<div class="container">
+			<button class="counterBtn prevBtn">Lower</button>
+			<button class="counterBtn nextBtn">Add</button>
+			
+			
+		</div>
+		
+	</div>
+
+</body>
+</html>
